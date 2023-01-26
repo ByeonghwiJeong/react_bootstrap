@@ -15,6 +15,7 @@ function App() {
         </Container>
       </Navbar>
       <Button variant="outline-primary">Primary</Button>
+      <div className="main-bg"></div>
     </div>
   );
 }
