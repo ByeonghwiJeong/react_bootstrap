@@ -1,5 +1,6 @@
 import { Button, Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
+import bg from "./img/bg.png";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
         </Container>
       </Navbar>
       <Button variant="outline-primary">Primary</Button>
-      <div className="main-bg"></div>
+      <div
+        className="main-bg"
+        style={{ backgroundImage: "url(" + bg + ")" }}></div>
     </div>
   );
 }
