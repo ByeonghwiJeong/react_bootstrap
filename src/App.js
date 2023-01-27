@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
 import data from "./data";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   let [shoes] = useState(data);
@@ -18,18 +19,30 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-      <Button variant="outline-primary">Primary</Button>
-      <div className="main-bg"></div>
-      <div className="container">
-        <div className="row">
-          {/* <Card shoes={shoes[0]} i={1}></Card>
-          <Card shoes={shoes[1]} i={2}></Card>
-          <Card shoes={shoes[2]} i={3}></Card> */}
-          {shoes.map((a, i) => {
-            return <Card shoes={shoes[i]} i={i + 1}></Card>;
-          })}
-        </div>
-      </div>
+
+      <Link to="/">홈</Link>
+      <Link to="/detail">상제페이지</Link>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <div className="main-bg"></div>
+              <div className="container">
+                <div className="row">
+                  {shoes.map((a, i) => {
+                    return <Card shoes={shoes[i]} i={i}></Card>;
+                  })}
+                </div>
+              </div>
+            </div>
+          }></Route>
+        <Route path="/detail" element={<div>상세페이지</div>}></Route>
+        <Route path="/about" element={<div>어바웃페이지</div>}></Route>
+        <Route></Route>
+        <Route></Route>
+      </Routes>
     </div>
   );
 }
