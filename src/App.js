@@ -3,6 +3,7 @@ import { Button, Navbar, Container, Nav } from "react-bootstrap";
 import "./App.css";
 import data from "./data";
 import { Routes, Route, Link } from "react-router-dom";
+import Detail from "./Detail";
 
 function App() {
   let [shoes] = useState(data);
@@ -38,10 +39,7 @@ function App() {
               </div>
             </div>
           }></Route>
-        <Route path="/detail" element={<div>상세페이지</div>}></Route>
-        <Route path="/about" element={<div>어바웃페이지</div>}></Route>
-        <Route></Route>
-        <Route></Route>
+        <Route path="/detail" element={<Detail></Detail>}></Route>
       </Routes>
     </div>
   );
